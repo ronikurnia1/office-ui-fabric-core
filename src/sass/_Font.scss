@@ -417,6 +417,17 @@
   font-style: normal;
 }
 
+// Output the customized fonts
+@include Roboto('Thin');
+@include Roboto('Light');
+@include Roboto('Regular');
+@include Roboto('Medium');
+@include Roboto('Bold');
+@include OpenSans('Light');
+@include OpenSans('Regular');
+@include OpenSans('Semibold');
+@include OpenSans('Bold');
+
 // Output the standard fonts
 @include SegoeUIWestEuropeanLight;
 @include SegoeUIWestEuropeanRegular;

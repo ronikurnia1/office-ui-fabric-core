@@ -9,6 +9,28 @@
   Your use of the content in the files referenced here are subject to the terms of the license at http://aka.ms/fabric-font-license
 */
 
+// Mixins to generate local Roboto @font-face rules for unique languages.
+@mixin Roboto($ms-font-weight) {
+  @font-face {
+    font-family: '#{$ms-font-roboto} #{$ms-font-weight}';
+    src: local('Roboto #{$ms-font-weight}'),
+         url('#{$ms-font-local-directory}/#{$ms-font-path-roboto}/Roboto-#{$ms-font-weight}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
+// Mixins to generate local Open Sans @font-face rules for unique languages.
+@mixin OpenSans($ms-font-weight) {
+  @font-face {
+    font-family: '#{$ms-font-opensans} #{$ms-font-weight}';
+    src: local('Open Sans #{$ms-font-weight}'),
+         url('#{$ms-font-local-directory}/#{$ms-font-path-opensans}/OpenSans-#{$ms-font-weight}.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
 // Mixins to generate @font-face rules for unique languages.
 @mixin SegoeUILight($ms-font-language, $ms-font-path) {
   @font-face {
@@ -177,8 +199,9 @@
   }
 }
 
+  //font-family: $ms-font-family-base;
 @mixin ms-baseFont {
-  font-family: $ms-font-family-base;
+  font-family: $ms-font-family-base-roboto;
   -webkit-font-smoothing: antialiased;
 }
 
